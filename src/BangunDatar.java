@@ -39,13 +39,50 @@ public class BangunDatar {
                         System.out.println("Keliling: " + pp.keliling());
                   }
                     case 3 -> {
-                        System.out.print("Masukkan alas: ");
-                        double alas = scanner.nextDouble();
-                        System.out.print("Masukkan tinggi: ");
-                        double tinggi = scanner.nextDouble();
-                        Segitiga segitiga = new Segitiga(alas, tinggi);
-                        System.out.println("Luas: " + segitiga.luas());
-                        System.out.println("Keliling: " + segitiga.keliling());
+                        System.out.println("Pilih Tipe Segitiga:");
+                        System.out.println("1. Segitiga Siku-siku (alas dan tinggi)");
+                        System.out.println("2. Segitiga dengan tiga sisi (Heron)");
+                        System.out.println("3. Segitiga dengan dua sisi dan sudut (dalam derajat)");
+                        System.out.print("Silahkan pilih tipe segitiga: ");
+                        int tipeSegitiga = scanner.nextInt(); 
+
+                    switch (tipeSegitiga) {
+                       case 1 ->                            {
+                               System.out.print("Masukkan alas: ");
+                               double alas = scanner.nextDouble();
+                               System.out.print("Masukkan tinggi: ");
+                               double tinggi = scanner.nextDouble();
+                               Segitiga segitiga = new Segitiga(alas, tinggi);
+                               System.out.println("Luas: " + segitiga.luas());
+                               System.out.println("Keliling: " + segitiga.keliling());
+                           }
+                       case 2 ->                            {
+                               System.out.print("Masukkan sisi A: ");
+                               double sisiA = scanner.nextDouble();
+                               System.out.print("Masukkan sisi B: ");
+                               double sisiB = scanner.nextDouble();
+                               System.out.print("Masukkan sisi C: ");
+                               double sisiC = scanner.nextDouble();
+                               Segitiga segitiga = new Segitiga(sisiA, sisiB, sisiC);
+                               System.out.println("Luas: " + segitiga.luas());
+                               System.out.println("Keliling: " + segitiga.keliling());
+                           }
+                       case 3 ->                            {
+                               System.out.print("Masukkan sisi A: ");
+                               double alas = scanner.nextDouble();
+                               System.out.print("Masukkan sisi B: ");
+                               double tinggi = scanner.nextDouble();
+                               System.out.print("Masukkan sudut di antara A dan B (dalam derajat): ");
+                               double sudut = scanner.nextDouble();
+                               Segitiga segitiga = new Segitiga(alas, tinggi, sudut, 'A');
+                               System.out.println("Luas: " + segitiga.luas());
+                               System.out.println("Keliling: " + segitiga.keliling());
+                           }
+                       default -> {
+                           System.out.println("Pilihan tipe segitiga tidak valid!");
+                       }
+                   }
+
                   }
                     default -> System.out.println("Pilihan tidak tersedia");
                }

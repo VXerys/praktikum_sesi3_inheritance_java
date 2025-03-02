@@ -2,6 +2,9 @@ public class BujurSangkar extends BangunDatar {
      double sisi;
 
      public BujurSangkar( double sisi){
+          if (sisi <= 0) {
+               throw new IllegalArgumentException("Nilai sisi harus lebih besar dari 0.");
+          }
           this.sisi = sisi;
      }
      @Override
